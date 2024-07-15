@@ -1,0 +1,33 @@
+@use "./partials/resets";
+@use "./partials/mixins" as *;
+@use "./partials/typography" as *;
+@use "./partials/variables" as *;
+
+
+html {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Avenir", "Serif", "Sans-serif";
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+  
+    @include tablet {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+  }
+  
+  a {
+    text-decoration: none;
+  }

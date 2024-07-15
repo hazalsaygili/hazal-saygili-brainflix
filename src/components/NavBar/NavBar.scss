@@ -1,0 +1,80 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.navbar {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    gap: 1rem;
+
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__logo {
+    width: 33%;
+    height: 10vh;
+    padding: 1rem;
+    align-self: center;
+
+    @include tablet {
+      padding: 0 2rem;
+    }
+  }
+
+  &__mohanImg {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+
+    @include tablet {
+       top: 1.25rem;
+       right: 2rem;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 1rem;
+
+    @include tablet {
+      right: 0;
+      width: 70%;
+      flex-direction: row;
+      justify-items: end;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    @include desktop {
+      width: 50%;
+    }
+  }
+
+  &__searchField {
+    background-color: $mercury;
+    width: 80%;
+    resize:none;
+    border-color: $silver;
+    padding: 0.25rem;
+    @include tablet {
+      width: 50%;
+    }
+    @include desktop {
+      width: 40%;
+    }
+  }
+
+  &__uploadButton {
+    @include tablet {
+      width: 30%;
+    }
+  }
+}

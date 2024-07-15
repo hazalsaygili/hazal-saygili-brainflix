@@ -1,0 +1,21 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+
+.details {
+    &__wrapper  {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid $mercury; 
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 0;
+        gap: 1rem;
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+}

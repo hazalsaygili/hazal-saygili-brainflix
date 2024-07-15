@@ -1,0 +1,18 @@
+@use "../../styles/partials/mixins" as *;
+
+
+.video {
+    &__Image {
+        margin-top:1rem;
+        width: 100%;
+        height: fit-content;
+        @include tablet{
+            padding: 0 1rem;
+            background-color: black;
+        }
+
+        @include desktop{
+            padding: 0 10rem;
+        }
+    }
+}
