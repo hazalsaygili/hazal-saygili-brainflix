@@ -1,34 +1,36 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.comments { 
-  &__addCommentWrapper{
+.comments {
+  &__addCommentWrapper {
     display: flex;
     gap: 1rem;
     padding: 1rem 0;
+    border-bottom: 1px solid $mercury;
   }
 
-  &__addComment{
-    display:flex;
+  &__addComment {
+    display: flex;
     flex-direction: column;
     width: 100%;
     gap: 0.25rem;
+    
   }
 
-  &__Img{
+  &__Img {
     border-radius: 50%;
     width: 3rem;
     height: 3rem;
   }
 
-  &__AnonymImg{
+  &__AnonymImg {
     border-radius: 50%;
     width: 3rem;
     height: 3rem;
     background-color: $silver;
     margin-top: 1rem;
   }
-    
+
   &__commentCard {
     display: flex;
     flex-direction: column;
@@ -39,7 +41,7 @@
   &__commentCardWrapper {
     display: flex;
     gap: 1rem;
-    border-top: 1px solid $mercury;
+    border-bottom: 1px solid $mercury;
   }
 
   &__commentedNameTimeWrapper {
@@ -55,18 +57,4 @@
     color: $silver;
   }
 
-  &__commentImg {
-    background-color: $silver;
-    align-self: start;
-    margin-top: 1.5rem;
-    border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
-
-    @include tablet {
-      width: 3rem;
-      height: 3rem;
-    }
-
-  }
 }

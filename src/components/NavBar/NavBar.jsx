@@ -11,7 +11,7 @@ function NavBar() {
         alt="Brain-Flix text with blue white play image"
       />
       <div className="navbar__wrapper">
-        <textarea className="navbar__searchField">Search</textarea>
+        <textarea className="navbar__searchField" placeholder="Search"></textarea>
         <button className="navbar__uploadButton">UPLOAD</button>
         <img
           className="navbar__mohanImg"

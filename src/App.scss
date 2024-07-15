@@ -1,7 +1,7 @@
 @use "./styles/main.scss";
 @use "./styles/partials/mixins" as *;
 @use "./styles/partials/variables" as *;
-
+@use "./styles/partials/typography" as *;
 
 .app {
   &__container {
@@ -19,17 +19,11 @@
   }
 
   &__videoDetails {
+    padding: 1rem;
     @include desktop {
       max-width: 65%;
     }
   }
 }
 
-button {
-  background-color: $brainFlix-blue;
-  color: $white;
-  border: none;
-  border-radius: 0.25rem;
-  padding: 1rem;
 
-}

@@ -5,37 +5,47 @@
   &__container {
     display: flex;
     flex-direction: column;
-    padding: 0 1rem;
+    padding: 1rem;
     gap: 1rem;
 
     @include tablet {
       flex-direction: row;
+      padding: 0 2.25rem;
+
+    }
+
+    @include desktop {
+      justify-content: space-between;
+      padding: 0 5rem;
+
     }
   }
 
   &__logo {
-    width: 33%;
-    height: 10vh;
-    padding: 1rem;
     align-self: center;
+    height: 4vh;
 
     @include tablet {
-      padding: 0 2rem;
+      width: 35%;
+      padding: 0 6rem;
+    }
+    @include desktop {
+      padding: 0 9rem;
     }
   }
 
   &__mohanImg {
     position: absolute;
     top: 0;
-    right: 1rem;
+    right: 2rem;
     border-radius: 50%;
     width: 3rem;
     height: 3rem;
 
     @include tablet {
        top: 1.25rem;
-       right: 2rem;
     }
+
   }
 
   &__wrapper {

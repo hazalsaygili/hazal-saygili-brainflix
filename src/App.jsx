@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.scss";
+import "./styles/main.scss";
 import NavBar from "./components/NavBar/NavBar";
 import Video from "./components/Video/Video";
 import Details from "./components/Details/Details";
