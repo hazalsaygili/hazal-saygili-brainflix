@@ -3,7 +3,7 @@
 @use "../styles/partials/variables" as *;
 
 html {
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 *,
@@ -13,7 +13,8 @@ html {
 }
 
 body {
-  font-family: 'Avenir', sans-serif;
+  font-family: "Avenir", sans-serif;
+  color: $brainFlix-black;
   width: auto;
   margin: 0 auto;
   padding: 0;
@@ -29,5 +30,4 @@ button {
   border: none;
   border-radius: 0.25rem;
   padding: 1rem;
-
 }

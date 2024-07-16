@@ -14,7 +14,7 @@ function SideBar({ videos, handleVideoClick }) {
                 src={video.image}
                 alt={video.title}
               />
-              <div>
+              <div className="sidebar__text">
                 <p className="sidebar__imageTitle"> {video.title}</p>
                 <p> {video.channel}</p>
               </div>

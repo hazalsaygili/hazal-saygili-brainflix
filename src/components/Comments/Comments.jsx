@@ -1,5 +1,6 @@
 import "./Comments.scss";
 import MohanImage from "../../assets/images/Mohan-muruge.jpg";
+import addCommentIcon from "../../assets/images/icons/add_comment.svg";
 
 function Comments({ comments }) {
   return (
@@ -16,14 +17,17 @@ function Comments({ comments }) {
           <label for="commentInput" className="comments__label">
             JOIN THE CONVERSATION
           </label>
-          <input
-            type="text"
-            name="commentInput"
-            id="commentInput"
-            className="comments__textFields"
-            placeholder="Add a new comment"
-          />
-          <button className="comments__commentSubmitButton">COMMENT</button>
+
+          <div className="comments__inputWrapper">
+            <textarea
+              type="text"
+              name="commentInput"
+              id="commentInput"
+              className="comments__textFields"
+              placeholder="Add a new comment"
+            />
+            <button className="comments__commentSubmitButton"><img src={addCommentIcon} alt="add comment icon"/> COMMENT</button>
+          </div>
         </form>
       </div>
 

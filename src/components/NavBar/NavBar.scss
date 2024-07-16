@@ -11,41 +11,34 @@
     @include tablet {
       flex-direction: row;
       padding: 0 2.25rem;
-
     }
 
     @include desktop {
       justify-content: space-between;
       padding: 0 5rem;
-
     }
   }
 
   &__logo {
     align-self: center;
-    height: 4vh;
+    height: 2rem;
 
     @include tablet {
-      width: 35%;
-      padding: 0 6rem;
-    }
-    @include desktop {
-      padding: 0 9rem;
+      height: 100%;
     }
   }
 
   &__mohanImg {
     position: absolute;
     top: 0;
-    right: 2rem;
+    right: 1.5rem;
     border-radius: 50%;
     width: 3rem;
     height: 3rem;
 
     @include tablet {
-       top: 1.25rem;
+      top: 1.25rem;
     }
-
   }
 
   &__wrapper {
@@ -69,11 +62,15 @@
   }
 
   &__searchField {
-    background-color: $mercury;
+    border: 1px solid $mercury;
+    border-radius: 0.25rem;
+    outline: 0;
+    padding: 0.5rem 0.25rem 0.5rem 2.5rem;
+    background: transparent url("/icons/search.svg") no-repeat 1rem center;
+    background-color: $alabaster;
     width: 80%;
-    resize:none;
-    border-color: $silver;
-    padding: 0.25rem;
+    height: 100%;
+    resize: none;
     @include tablet {
       width: 50%;
     }
@@ -83,6 +80,9 @@
   }
 
   &__uploadButton {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     @include tablet {
       width: 30%;
     }

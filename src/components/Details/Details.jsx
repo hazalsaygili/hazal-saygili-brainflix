@@ -16,11 +16,11 @@ function Details({ activeVideo }) {
         <div className="details__list">
           <span>
             <img src={viewsIcon} alt="Views" />
-           {activeVideo.views}
+           {" " + activeVideo.views}
           </span>
           <span>
             <img src={likesIcon} alt="Likes" />
-            {activeVideo.likes}
+            {" " + activeVideo.likes}
           </span>
         </div>
       </div>

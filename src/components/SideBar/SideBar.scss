@@ -26,7 +26,19 @@
   }
 
   &__image {
-    width: 35%;
+    border-radius: 0.25rem;
+    height: 6rem;
+    width:  9rem;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    p {
+      margin: 0;
+    }
   }
 
   &__imageTitle {

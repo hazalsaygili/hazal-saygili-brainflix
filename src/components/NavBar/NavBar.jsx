@@ -1,6 +1,7 @@
 import "./NavBar.scss";
 import brainFlixLogo from "../../assets/images/BrainFlix-logo.svg";
 import mohanMurugeImg from "../../assets/images/Mohan-muruge.jpg";
+import uploadIcon from "../../assets/images/icons/upload.svg";
 
 function NavBar() {
   return (
@@ -11,8 +12,8 @@ function NavBar() {
         alt="Brain-Flix text with blue white play image"
       />
       <div className="navbar__wrapper">
-        <textarea className="navbar__searchField" placeholder="Search"></textarea>
-        <button className="navbar__uploadButton">UPLOAD</button>
+        <input className="navbar__searchField" placeholder="Search" type="search" />
+        <button className="navbar__uploadButton"><img src={uploadIcon} alt="upload icon"/> UPLOAD<span></span></button>
         <img
           className="navbar__mohanImg"
           src={mohanMurugeImg}
