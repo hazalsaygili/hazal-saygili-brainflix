@@ -1,6 +1,7 @@
 import "./SideBar.scss";
+import { Link } from "react-router-dom";
 
-function SideBar({ videos, handleVideoClick }) {
+function SideBar({ videos }) {
   return (
     <div className="sidebar__container">
       <h3>NEXT VIDEOS</h3>
@@ -8,7 +9,7 @@ function SideBar({ videos, handleVideoClick }) {
       {videos.map((video) => {
         return (
           <div key={video.id}>
-            <div className="sidebar__imageWrapper"  onClick={() => handleVideoClick(video.id)}>
+            <Link to={"/videos/" + video.id} className="sidebar__imageWrapper">
               <img
                 className="sidebar__image"
                 src={video.image}
@@ -18,7 +19,7 @@ function SideBar({ videos, handleVideoClick }) {
                 <p className="sidebar__imageTitle"> {video.title}</p>
                 <p> {video.channel}</p>
               </div>
-            </div>
+            </Link>
           </div>
         );
       })}

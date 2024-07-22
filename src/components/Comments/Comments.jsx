@@ -14,7 +14,7 @@ function Comments({ comments }) {
           alt="Mohan Muruge face image"
         />
         <form className="comments__addComment">
-          <label for="commentInput" className="comments__label">
+          <label htmlFor="commentInput" className="comments__label">
             JOIN THE CONVERSATION
           </label>
 
