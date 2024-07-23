@@ -4,7 +4,6 @@ import uploadVideoIcon from "../../assets/images/icons/publish.svg";
 import { Link, useNavigate } from "react-router-dom";
 
 function UploadVideo() {
-
   const navigate = useNavigate();
 
   const formSubmitHandler = (event) => {

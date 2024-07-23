@@ -45,11 +45,6 @@ function App() {
         <Route path="/videos/:id" element={<VideoDetailsPage videos={videos.filter((video) => video.id != defaultVideoId)}/>} />
         <Route path="/upload-video" element={<VideoUploadPage />} />
       </Routes>
-      {/* <section className="app__container">
-        <SideBar
-          videos={videos.filter((video) => video.id != defaultVideoId)}
-        />
-      </section> */}
     </BrowserRouter>
   );
 }

@@ -45,7 +45,7 @@ function VideoDetailsPage({ videos, defaultVideoId }) {
       <section className="app__container">
         <div className="app__videoDetails">
           <Details activeVideo={videoDetails} />
-          <Comments comments={videoDetails.comments} />
+          <Comments activeVideo={videoDetails} />
         </div>
         <SideBar
           videos={videos.filter((video) => video.id != defaultVideoId)}
