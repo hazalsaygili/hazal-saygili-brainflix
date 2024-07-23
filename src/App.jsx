@@ -4,7 +4,6 @@ import axios from "axios";
 import "./App.scss";
 import "./styles/main.scss";
 import NavBar from "./components/NavBar/NavBar";
-//import SideBar from "./components/SideBar/SideBar";
 import VideoDetailsPage from "./pages/VideoDetailsPage/VideoDetailsPage";
 import VideoUploadPage from "./pages/VideoUploadPage/VideoUploadPage";
 
@@ -30,8 +29,6 @@ function App() {
     return <span>Loading...</span>;
   }
 
-  console.log(videos);
-
   const defaultVideoId = videos[0].id;
 
   return (
@@ -40,9 +37,21 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<VideoDetailsPage defaultVideoId={defaultVideoId} videos={videos.filter((video) => video.id != defaultVideoId)}/>}
+          element={
+            <VideoDetailsPage
+              defaultVideoId={defaultVideoId}
+              videos={videos.filter((video) => video.id != defaultVideoId)}
+            />
+          }
         />
-        <Route path="/videos/:id" element={<VideoDetailsPage videos={videos.filter((video) => video.id != defaultVideoId)}/>} />
+        <Route
+          path="/videos/:id"
+          element={
+            <VideoDetailsPage
+              videos={videos.filter((video) => video.id != defaultVideoId)}
+            />
+          }
+        />
         <Route path="/upload-video" element={<VideoUploadPage />} />
       </Routes>
     </BrowserRouter>

@@ -8,7 +8,6 @@ function Comments({ activeVideo }) {
     "https://unit-3-project-api-0a5620414506.herokuapp.com/videos/";
   const apiKey = "6da2c0f1-f01d-4f32-a166-2fd67adb1ef1";
 
-  console.log(activeVideo);
   let comments = activeVideo.comments;
   let id = activeVideo.id;
 
@@ -17,7 +16,6 @@ function Comments({ activeVideo }) {
       name: "Anonym",
       comment: "" + newComment + "",
     };
-    console.log(commentData);
 
     let fullUrl = "" + baseURL + id + "/comments?api_key=" + apiKey + "";
 

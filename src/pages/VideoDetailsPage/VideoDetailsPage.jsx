@@ -37,8 +37,6 @@ function VideoDetailsPage({ videos, defaultVideoId }) {
     return <span>Loading...</span>;
   }
 
-  console.log(videoDetails);
-
   return (
     <>
       <Video activeVideo={videoDetails} />
