@@ -9,8 +9,7 @@ import SideBar from "../../components/SideBar/SideBar";
 
 function VideoDetailsPage({ videos, defaultVideoId }) {
   const [videoDetails, setVideoDetails] = useState(null);
-  const baseURL = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
-  const apiKey = "6da2c0f1-f01d-4f32-a166-2fd67adb1ef1";
+  const baseURL = "http://localhost:8080/";
 
   let { id } = useParams();
 
@@ -22,7 +21,7 @@ function VideoDetailsPage({ videos, defaultVideoId }) {
     const fetchVideoDetails = async () => {
       try {
         const response = await axios.get(
-          baseURL + "videos/" + id + "?api_key=" + apiKey
+          baseURL + "videos/" + id
         );
         setVideoDetails(response.data);
       } catch (error) {

@@ -2,6 +2,9 @@ import "./SideBar.scss";
 import { Link } from "react-router-dom";
 
 function SideBar({ videos }) {
+
+  const baseURL = "http://localhost:8080";
+
   return (
     <div className="sidebar__container">
       <h3>NEXT VIDEOS</h3>
@@ -12,7 +15,7 @@ function SideBar({ videos }) {
             <Link to={"/videos/" + video.id} className="sidebar__imageWrapper">
               <img
                 className="sidebar__image"
-                src={video.image}
+                src={baseURL + video.image}
                 alt={video.title}
               />
               <div className="sidebar__text">

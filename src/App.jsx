@@ -9,13 +9,12 @@ import VideoUploadPage from "./pages/VideoUploadPage/VideoUploadPage";
 
 function App() {
   const [videos, setVideos] = useState([]);
-  const baseURL = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
-  const apiKey = "6da2c0f1-f01d-4f32-a166-2fd67adb1ef1";
+  const baseURL = "http://localhost:8080";
 
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const response = await axios.get(baseURL + "videos?api_key=" + apiKey);
+        const response = await axios.get(baseURL + "/videos");
         setVideos(response.data);
       } catch (error) {
         console.error(error);
@@ -23,7 +22,7 @@ function App() {
     };
 
     fetchVideos();
-  }, []);
+  }, [videos]);
 
   if (videos.length === 0) {
     return <span>Loading...</span>;

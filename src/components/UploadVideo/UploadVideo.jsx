@@ -1,14 +1,28 @@
 import "./UploadVideo.scss";
 import uploadVideoImg from "../../assets/images/Upload-video-preview.jpg";
 import uploadVideoIcon from "../../assets/images/icons/publish.svg";
+import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
 function UploadVideo() {
   const navigate = useNavigate();
+  const baseURL = "http://localhost:8080";
 
-  const formSubmitHandler = (event) => {
+  const postVideo = async (newVideo) => {
+    let fullUrl = baseURL + "/videos";
+
+    try {
+      const response = await axios.post(fullUrl, newVideo);
+      window.alert("Your video is published!");
+    } catch (error) {
+      window.alert(error);
+    }
+  };
+
+  const formSubmitHandler = async (event) => {
     event.preventDefault();
-    window.alert("Your video is published.");
+    const newVideo = {title: event.target.videoTitle.value, description: event.target.videoDescription.value};
+    await postVideo(newVideo);
     navigate("/");
   };
 
@@ -38,13 +52,13 @@ function UploadVideo() {
               className="uploadVideo__inputField"
               placeholder="Add a title to your video"
             />
-            <label htmlFor="videoDescripton" className="uploadVideo__label">
+            <label htmlFor="videoDescription" className="uploadVideo__label">
               ADD A VIDEO DESCRIPTION
             </label>
             <textarea
               type="text"
-              name="videoDescripton"
-              id="videoDescripton"
+              name="videoDescription"
+              id="videoDescription"
               className="uploadVideo__inputField"
               placeholder="Add a description to your video"
             />

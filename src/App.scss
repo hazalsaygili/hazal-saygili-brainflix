@@ -21,7 +21,7 @@
   &__videoDetails {
     padding: 1rem;
     @include desktop {
-      max-width: 65%;
+      width: 65%;
     }
   }
 }
