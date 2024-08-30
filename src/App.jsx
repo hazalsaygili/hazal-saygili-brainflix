@@ -11,18 +11,15 @@ function App() {
   const [videos, setVideos] = useState([]);
   const baseURL = "http://localhost:8080";
 
-  useEffect(() => {
-    const fetchVideos = async () => {
-      try {
-        const response = await axios.get(baseURL + "/videos");
-        setVideos(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchVideos();
-  }, [videos]);
+  const fetchVideos = async () => {
+    try {
+      const response = await axios.get(baseURL + "/videos");
+      setVideos(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  fetchVideos();
 
   if (videos.length === 0) {
     return <span>Loading...</span>;
