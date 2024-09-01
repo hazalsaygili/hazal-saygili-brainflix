@@ -6,31 +6,38 @@ import Details from "../../components/Details/Details";
 import Comments from "../../components/Comments/Comments";
 import SideBar from "../../components/SideBar/SideBar";
 
-
-function VideoDetailsPage({ videos, defaultVideoId }) {
+function VideoDetailsPage() {
+  let { id } = useParams();
+  const [videos, setVideos] = useState([]);
   const [videoDetails, setVideoDetails] = useState(null);
   const baseURL = "http://localhost:8080/";
 
-  let { id } = useParams();
+  useEffect(() => {
+    const fetchVideos = async () => {
+      try {
+        const response = await axios.get(baseURL + "videos");
+        setVideos(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchVideos();
+  }, []);
 
-  if (!id) {
-    id = defaultVideoId;
-  }
+  const pageVideoId = id || videos[0]?.id;
 
   useEffect(() => {
     const fetchVideoDetails = async () => {
       try {
-        const response = await axios.get(
-          baseURL + "videos/" + id
-        );
+        const response = await axios.get(baseURL + "videos/" + pageVideoId);
         setVideoDetails(response.data);
       } catch (error) {
         console.error(error);
       }
     };
 
-    fetchVideoDetails();
-  }, [id]);
+    pageVideoId && fetchVideoDetails();
+  }, [pageVideoId]);
 
   if (!videoDetails) {
     return <span>Loading...</span>;
@@ -45,7 +52,7 @@ function VideoDetailsPage({ videos, defaultVideoId }) {
           <Comments activeVideo={videoDetails} />
         </div>
         <SideBar
-          videos={videos.filter((video) => video.id != defaultVideoId)}
+          videos={videos.filter((video) => video.id != pageVideoId)}
         />
       </section>
     </>
